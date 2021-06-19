@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="112dp"
+    android:layout_marginTop="1dp"
+    android:layout_marginBottom="1dp"
+    android:background="@color/toolbar_selected_color"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="4"
+        android:id="@+id/message_photo"
+        android:src="@drawable/avatar_1"
+        >
+    </ImageView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:id="@+id/message_name"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:paddingLeft="20dp"
+            android:textSize="20dp"
+            android:text="Имя"
+            android:layout_height="match_parent">
+
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/message_txt_id"
+            android:textColor="@color/black"
+            android:paddingLeft="20dp"
+            android:text="Сообщение"
+            android:textSize="20dp"
+
+            >
+
+        </TextView>
+
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

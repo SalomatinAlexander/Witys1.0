@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/base_color"
+    android:layout_height="?actionBarSize">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:id="@+id/person_img_toolbar_general"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/positive_btn_search"
+            android:src="@drawable/ic_baseline_favorite_border_24">
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:id="@+id/search_img_toolbar_general">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/negative_btn_search"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_close_24">
+        </ImageView>
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

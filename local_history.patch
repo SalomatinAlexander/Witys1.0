@@ -1,0 +1,105 @@
+Index: app/src/main/java/com/example/Witys/presentation/profil/ProfilFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/Witys/presentation/profil/ProfilFragment.kt	(date 1624117136180)
++++ app/src/main/java/com/example/Witys/presentation/profil/ProfilFragment.kt	(date 1624117136180)
+@@ -132,13 +132,7 @@
+             }
+         }
+ 
+-        if(photoURl.isNullOrEmpty()) {
+-            photoURl =
+-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS05NodjqKpxi8XUMhzzuvf_igDzlGTeLYy6A&usqp=CAU"
+-            Picasso.get()
+-                .load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS05NodjqKpxi8XUMhzzuvf_igDzlGTeLYy6A&usqp=CAU")
+-                .into(photo)
+-        }
++
+ 
+         changeBtn = view.findViewById(R.id.change_profil_btn)
+         changeBtn.setOnClickListener {
+@@ -162,7 +156,7 @@
+             //Тип получаемых объектов - image:
+             photoPickerIntent.setType("image/*");
+             //Запускаем переход с ожиданием обратного результата в виде информации об изображении:
+-            startActivityForResult(photoPickerIntent, Pick_image);
++            onActivityResultMy(RESULT_OK, Pick_image, photoPickerIntent);
+         }
+         return view
+     }
+@@ -202,7 +196,7 @@
+             sharedPreferences.getString(USER_ABOUT_PERSON, "О партнере:").toString()
+         )
+ 
+-        photoURl = sharedPreferences.getString(USER_PHOTO, "О себе:").toString()
++        photoURl = sharedPreferences.getString(USER_PHOTO, " ").toString()
+         Picasso.get().load(photoURl).into(photo)
+      //   photo.setImageURI(sharedPreferences.getString(USER_PHOTO, "О себе:") as Uri)
+         hobbyTxt.setText(sharedPreferences.getString(USER_HOBBY, "Увлечения:").toString())
+@@ -234,7 +228,6 @@
+ 
+             }else{
+                 childrenBtn.setBackgroundResource(R.drawable.base_background)
+-
+         }
+ 
+             if (pet) {
+@@ -242,7 +235,7 @@
+ 
+             }else{
+                 PetBtn.setBackgroundResource(R.drawable.base_background)
+-               
++
+ 
+             }
+ 
+@@ -282,33 +275,25 @@
+                 }
+             }}
+ 
+-override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
++ fun onActivityResultMy(requestCode: Int, resultCode: Int, data: Intent?) {
+ 
+-    when (requestCode) {
+-        Pick_image ->
+-            if (resultCode == RESULT_OK) {
++
+                 try {
+                     var imageUri = data!!.getData();
+-                    photoURl = imageUri.toString()
+-                    saveValue(
+-                        name = nameTxt.text.toString(),
+-                        soname = sonameTxt.text.toString(),
+-                        language = langTxt.text.toString(),
+-                        height = heightTxt.text.toString(),
+-                        AboutMe = aboutMeTxt.text.toString(),
+-                        AboutPerson = aboutPersonTxt.text.toString(),
+-                        hobby = hobbyTxt.text.toString(),
+-                        imageUri = photoURl, smoke, alco, child, pet
+-                    )
+-                    var imageStream =
+-                        imageUri?.let { requireActivity().contentResolver.openInputStream(it) };
+-                    var selectedImage = BitmapFactory.decodeStream(imageStream);
+-                    photo.setImageBitmap(selectedImage);
++
++
++                        photoURl = imageUri.toString()
++
++                        var imageStream =
++                                imageUri?.let { requireActivity().contentResolver.openInputStream(it) };
++                        var selectedImage = BitmapFactory.decodeStream(imageStream);
++                        photo.setImageBitmap(selectedImage);
++
+                 } catch (e: FileNotFoundException) {
+                     e.printStackTrace();
+ 
+                 }
+             }
+-    }
+-}
++
++
+ }
+\ No newline at end of file

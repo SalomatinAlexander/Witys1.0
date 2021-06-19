@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_color"
+    android:weightSum="3"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:text="Имя и ФИО"
+        android:id="@+id/search_name_txt"
+        android:gravity="center"
+        android:textColor="@color/white"
+
+        android:textSize="20dp">
+    </TextView>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/search_photo"
+        android:layout_margin="10dp"
+        android:src="@drawable/avatar_1"
+        android:background="@color/view_back_color">
+    </ImageView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="О себе:"
+            android:padding="10dp"
+            android:id="@+id/search_about_me"
+            android:background="@drawable/base_background"
+            android:layout_margin="10dp"
+            android:layout_weight="1">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/base_background"
+            android:text="О партнере:"
+            android:id="@+id/search_about_person"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1">
+        </TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Курение"
+                android:gravity="center"
+                android:id="@+id/smoke_search"
+                android:background="@drawable/base_background"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Алкоголь"
+                android:id="@+id/alco_search"
+                android:gravity="center"
+                android:background="@drawable/base_background"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Дети"
+                android:gravity="center"
+                android:id="@+id/child_search"
+                android:background="@drawable/base_background"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Питомцы"
+                android:gravity="center"
+                android:id="@+id/pet_search"
+                android:background="@drawable/base_background"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+            </TextView>
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Увлечения:"
+            android:id="@+id/search_about_hobby"
+            android:padding="10dp"
+            android:background="@drawable/base_background"
+            android:layout_margin="10dp"
+            android:layout_weight="1">
+        </TextView>
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
